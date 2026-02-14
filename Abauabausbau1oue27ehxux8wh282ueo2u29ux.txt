@@ -1204,7 +1204,7 @@ end
 
 AddEle("Corner", function(parent, CornerRadius)
     local New = SetProps(Create("UICorner", parent, {
-        CornerRadius = CornerRadius or UDim.new(0, 0)
+        CornerRadius = CornerRadius or UDim.new(0, 7)
     }), props)
     return New
 end)
@@ -1532,10 +1532,10 @@ function redzlib:MakeWindow(Configs)
     })
     
     local ParticleConfig = {
-        MaxParticles = 30,
+        MaxParticles = 0,
         SpawnRate = 0.1,
-        ParticleSize = {Min = 6, Max = 10},
-        ParticleSpeed = {Min = 15, Max = 25},
+        ParticleSize = {Min = 0, Max = 0},
+        ParticleSpeed = {Min = 0, Max = 0},
         ParticleLifetime = 6
     }
 
@@ -1712,13 +1712,13 @@ function redzlib:MakeWindow(Configs)
     local Window, FirstTab = {}, false
     function Window:CloseBtn()
         local Dialog = Window:Dialog({
-            Title = "MOON HUB",  
-            Text = "Are you sure you want to close?", 
+            Title = "Fechar",  
+            Text = "Tem certeza que deseja fechar o Lunar Client?", 
             Options = {
-                {"Yes", function()  
+                {"Confirmar", function()  
                     ScreenGui:Destroy()
                 end},
-                {"No"} 
+                {"Cancelar"} 
             }
         })
     end
